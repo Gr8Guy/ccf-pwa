@@ -8,6 +8,7 @@ var URLS = [
   `${GHPATH}/img/icon2.png`,
   `${GHPATH}/js/app.js`
   `${GHPATH}/js/jquery-3.1.0.min.js`
+  `${GHPATH}/audio/120BPM.mp3`
 ]
 
 var CACHE_NAME = APP_PREFIX + VERSION
