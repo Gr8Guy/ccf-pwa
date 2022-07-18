@@ -9,7 +9,7 @@
   "display": "standalone", 
   "icons": [
       {
-        "src": "/ccf-pwa/img/icon.png",
+        "src": "/ccf-pwa/img/icon2.png",
         "type": "image/png",
         "sizes": "700x700"
       }
