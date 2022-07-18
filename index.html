@@ -4,25 +4,458 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GitHub page as PWA template</title>
-  <link rel="canonical" href="https://codepo8.github.io/github-page-pwa/" />
-  <link rel="manifest" href="/github-page-pwa/manifest.webmanifest">
+  <link rel="canonical" href="https://Gr8Guy.github.io/ccfwebapp/" />
+  <link rel="manifest" href="/ccfwebapp/manifest.webmanifest">
   <link rel="stylesheet" href="css/styles.css">
-</head>
+  <script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+  <script language=JavaScript></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="icon_180x180.png" />
+
+  <style>
+      .center {
+        text-align: center;
+        margin-top: 1em;
+      }
+      .add-button {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+      }
+
+      @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+        html {
+          transform: rotate(-90deg);
+          transform-origin: left top;
+          width: 100%;
+          height: 100vh;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          position: absolute;
+          top: 100%;
+          left: 0;
+        }
+      }
+
+      audio {
+        width: 80%;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        border-radius: 90px;
+        transform: scale(1.05);
+      }
+
+
+      /* The Modal (background) */
+      .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+
+      /* The Close Button */
+      .close {
+        color: #aaaaaa;
+        text-align: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      h6 {
+        position: fixed;
+        bottom: 1px;
+        right: 1px;
+      }
+    </style>
+
+  </head>
 <body>
- 
-  <h1>GitHub page as PWA template</h1>
-  <p>
-    This is a PWA template for GitHub pages. 
-    Make sure to check the README at 
-    <a href="https://github.com/codepo8/github-page-pwa/">https://github.com/codepo8/github-page-pwa/</a> and 
-    to change the necessary settings to your needs.
-  </p>
+<!-- Trigger/Open The Modal -->
+    <div class="center">
+      <br />
+      <b1 style=" font-size: 20px;">Metronome 120 BPM</b1><br />
+
+      <audio controls loop id="metronomeSound">
+        <source  src="120BPM.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <br />
+
+      <div class="container-fluid">
+        <div class="jumbotron">
+          <h1 class="text-center hidden-xs-down"><b></b></h1>
+        </div>
+
+        <div id="timer-container" class="container timer-container">
+          <div class="row mb-6 mt-4">
+
+            <div class="col-md-4 col-sm-12 mb-12 card-group">
+              <div id="timer2" class="mb-12 card  border border-secondary">
+                <div class="card-header bg-secondary text-white">
+                  <b1 style=" font-size: 20px;">Code Time</b1>
+
+                </div>
+                <div class="card-block ">
+                  <p></p>
+                  <button type="button" id="startbutton1" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
+                    onclick="startToggle()" data-timerid="1" style="text-align: center; font-size: 20px;">Start</button>
+                  <button type="button" class="btn btn-default col-md-4 mb-12 resetbutton" onclick="history.go(0)"
+                    data-timerid="1" style="text-align: center; font-size: 20px;">Reset</button>
+                  <p></p>
+                  <p class="display-4 text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px;"
+                    data-timerid="1">00:00.00</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12 mb-12 card-group">
+              <div id="timer2" class="mb-12 card  border border-secondary">
+                <div class="card-header bg-secondary text-white">
+                  <b1 style=" font-size: 20px;">Compression Time</b1>
+                </div>
+                <div class="card-block ">
+                  <p></p>
+                  <button type="button" id="startbutton2" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
+                    onclick="startToggle()" data-timerid="2" style="text-align: center; font-size: 20px;">Start</button>
+                  <button type="button" class="btn btn-default col-md-4 mb-12 resetbutton" onclick="resetTimerX()"
+                    data-timerid="2" style="text-align: center; font-size: 20px;">Reset</button>
+                  <p></p>
+                  <p class="display-4 text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px;"
+                    data-timerid="2">00:00.00</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12 mb-12 card-group">
+              <div id="timer3" class="mb-12 card  border ">
+                <div id="box" class="card-header text-white">
+                  <b1 style=" font-size: 20px;">DYNAMIC CCF CALCULATION <i style=" font-size: 10px;"><br />(when timers are active)</i>
+                  </b1>
+                </div>
+                <div class="card-block ">
+                  <p></p>
+                  <p id="percentage" class="col-md-12" style="text-align: center; font-size: 40px;">0%</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <h6>
+      <button id="myBtn">Install / Contact</button>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>This web app is optimized for handheld mobile devices.</p>
+          <p>To install on iOS device, tap <img src="icon_share.png" height="20px" /> below and then select "add to homescreen"</p>
+          <p>To install on Android devices, tap <img src="icon_dots.png" height="20px" /> to open menu.</p>
+          <p>
+            For support, or questions, contact us through <a href="https://www.sim-central.com/pages/contact.html"
+              target="https://www.sim-central.com/pages/contact.html">our website</a> 
+          </p>
+          <p>Scan this code with your camera to share with other devices.<p><img src="qr.png" width="50%" /></p>
+          <p>
+            <div class="center">
+              Created and Maintained by <br /> Guy C. Gilbert and Jonathan Craddock<br /> Texas Tech University Health Sciences Center - Amarillo
+            </div>
+          </p>
+        </div>
+      </div>
+    </h6>
+
+    <script>   
+      //Timer constructor function
+      function Timer(id, currentstarttime, mslogged) {
+        this.id = id,
+          this.latestStartTime = currentstarttime,
+          this.msLogged = mslogged,
+          this.displayms = 0,
+          this.running = false,
+          this.name = $('.timertitle[data-timerid="' + String(id + 1) + '"]').text()
+      }
+
+      var tickRunning = false;
+      var percentage = 0;
+      var percentageText = percentage + '%';
+
+      //Create a timer for every element with class "timerdisplay"
+      var timerarr = [];
+      for (var i = 0; i < $(".timerdisplay.primarydisplay").length; i++) {
+        timerarr[i] = new Timer(i, 0, 0);
+      }
+
+      function displayTime(timeridzero, ms) {
+        //Handles updating displays with tick time or final logged times. 
+        //Expects zero indexed timerid and a duration in ms
+        function msToTime(duration) {
+          //Converts millisecond durations into MM:ss.mmm
+
+          function pad(n, z) {
+            // Pad to 2 or 3 digits, default is 2
+            z = z || 2;
+            return ('00' + n).slice(-z);
+          }
+
+          var tenmilliseconds = parseInt((duration % 1000) / 10),
+            seconds = parseInt((duration / 1000) % 60),
+            minutes = parseInt((duration / (1000 * 60)) % 60)
+
+          minutes = (minutes < 10) ? "0" + minutes : minutes;
+          seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+          return pad(minutes) + ":" + pad(seconds) + "." + pad(tenmilliseconds, 2);
+        }
+
+        $('.timerdisplay[data-timerid="' + String(timeridzero + 1) + '"]').text(msToTime(ms));
+      }
+
+      function startToggle() {//Called when Start/Stop button toggled.
+        var timeridzero = parseInt(event.target.getAttribute("data-timerid")) - 1;
+
+        if (timerarr[timeridzero].running) {
+          stopTimerX(timeridzero);
+        } else {
+          startTimerX(timeridzero);
+        }
+        if(timeridzero == 1) toggleSound();
+
+        console.log("(zero indexed) timerid: " + timeridzero.toString() + ", running: " + timerarr[timeridzero].running
+          .toString());
+      }
+
+      function startTimerX(timeridzero) {
+        //Start/Resume a timer. Expects a zero-indexed timerid.
+        timerarr[timeridzero].latestStartTime = Date.now();
+        timerarr[timeridzero].running = true;
+
+        if (tickRunning == false) {
+          tickInitialise();
+        }
+
+        $('.startbutton[data-timerid="' + String(timeridzero + 1) + '"]')
+          .text("Stop")
+          .addClass("btn-danger")
+          .removeClass("btn-success")
+        $('.resetbutton[data-timerid="' + String(timeridzero + 1) + '"]')
+          .addClass("btn-warning")
+          .removeClass("btn-default")
+        $('.timertabledisplay[data-timerid="' + String(timeridzero + 1) + '"]')
+          .addClass("table-success")
+          .removeClass("table-info")
+
+      }
+
+      function stopTimerX(timeridzero) {
+        //Stop a timer. Expects a zero-indexed timerid.
+        //Updates display, sets running to false and changes stop button.
+        timerarr[timeridzero].msLogged += Date.now() - timerarr[timeridzero].latestStartTime;
+        timerarr[timeridzero].displayms = timerarr[timeridzero].msLogged;
+        timerarr[timeridzero].running = false;
+
+        $('.startbutton[data-timerid="' + String(timeridzero + 1) + '"]')
+          .text("Start")
+          .addClass("btn-success")
+          .removeClass("btn-danger");
+        $('.timertabledisplay[data-timerid="' + String(timeridzero + 1) + '"]')
+          .addClass("table-info")
+          .removeClass("table-success");
+        displayTime(timeridzero, timerarr[timeridzero].msLogged);
+      }
+
+      function resetTimerX(timeridzero) {
+        //Called when reset button pressed. Resets timer and display.
+        var timeridzero = parseInt(event.target.getAttribute("data-timerid")) - 1;
+        stopTimerX(timeridzero);
+
+        timerarr[timeridzero].msLogged = 0;
+        timerarr[timeridzero].displayms = 0;
+        $('.timerdisplay[data-timerid="' + String(timeridzero + 1) + '"]').text("00:00.00");
+
+        $('.resetbutton[data-timerid="' + String(timeridzero + 1) + '"]')
+          .addClass("btn-default")
+          .removeClass("btn-info")
+        $('.timertabledisplay[data-timerid="' + String(timeridzero + 1) + '"]')
+          .removeClass("table-info")
+          .removeClass("table-success");
+      }
+
+      function tickTimerX(timeridzero) {
+        //Ticks the specified timer up by 100ms
+        timerarr[timeridzero].displayms += 100;
+
+        /*
+        * This function begins running anytime a timer starts and runs the function to update
+        * the time that is displayed for a particular timer. Indicated via the timeridzero parameter.
+        * Each time the page loads, all of the timerdisplay items are gathered and stored in the
+        * timerarr array as Timer objects. The properties for a Timer object are shown on lines 133-138
+        * 
+        * With that in mind, the code below checks to see if both timers are running and if so
+        * calculates the percentage and updates the percentage cell in the table.
+        */
+        if (timerarr[0].running != false && timerarr[1].running != false) {
+          percentage = (timerarr[1].displayms / timerarr[0].displayms) * 100;
+          percentageText = percentage.toFixed(0) + '%';
+          $('#percentage').html(percentageText);
+
+
+          if (percentage > 80) { //Highlight green for successful CCF
+            $('#percentage').addClass("text-success").removeClass("text-danger");
+          } else { //Highlight red for unsuccessful CCF
+            $('#percentage').addClass("text-danger").removeClass("text-success");
+          }
+
+          if (percentage > 80) { //Highlight green for successful CCF
+            $('#box').addClass("bg-success").removeClass("bg-danger");
+          } else { //Highlight red for unsuccessful CCF
+            $('#box').addClass("bg-danger").removeClass("bg-success");
+          }
+
+          if (percentage > 80) { //Highlight green for successful CCF
+            $('#timer3').addClass("border-success").removeClass("border-danger");
+          } else { //Highlight red for unsuccessful CCF
+            $('#timer3').addClass("border-danger").removeClass("border-success");
+          }
+
+        }
+
+
+        displayTime(timeridzero, Math.round(timerarr[timeridzero].displayms.toFixed(1) / 100) * 100);
+      }
+
+      function tickInitialise() {
+        console.log('ticking timer...');
+        //Start up an interval to make all running timers tick. Shuts itself off once no timers are running
+        var runningTimers = timerarr.filter(function (timer) {
+          return timer.running == true;
+        });
+
+        tickRunning = true;
+        var tick = setInterval(function () {
+          runningTimers = timerarr.filter(function (timer) {
+            return timer.running == true;
+          });
+
+          if (runningTimers.length == 0) {
+            clearInterval(tick);
+            tickRunning = false;
+          }
+
+          for (var i = 0; i < runningTimers.length; i++) {
+            tickTimerX(runningTimers[i].id);
+          }
+        }, 100);
+      }
+
+      function nameChanged(timeridzero) {
+        //Updates name of timer object and name in the bottom table when call by input listener
+        timerarr[timeridzero].name = $('.timertitle[data-timerid="' + String(timeridzero + 1) + '"]').text();
+        $('.timertablename[data-timerid="' + String(timeridzero + 1) + '"]').text(timerarr[timeridzero].name);
+        if (timerarr[timeridzero].name.length > 40) {
+          //console.log("Timer name bug probably happened");
+          //console.log(timerarr[timeridzero].name);
+          alert("Timer name bug probably happened. Name is now:" + timerarr[timeridzero].name);
+        };
+      }
+
+      function toggleSound() {
+        const audio = document.querySelector(`audio[id="metronomeSound"]`);
+        if (!audio) return;
+        (!audio.paused) ? audio.pause() : audio.play();
+      }
+
+      //Add an event listener to call nameChanged() when a user edits one of the timer names
+      $(".timertitle").each(function () {
+        this.addEventListener("input", function () {
+          nameChanged(event.target.getAttribute("data-timerid") - 1);
+        });
+      });
+
+      $(".timertitle").on('keydown', function (e) {
+        if (e.which == 13 && e.shiftKey == false) {
+          document.activeElement.blur();
+          console.log($(this).is(":focus"));
+          return false;
+        }
+      });
+
+      try {
+        Typekit.load();
+      } catch (e) {}
+
+
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal 
+      btn.onclick = function () {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
 
   <script>
       if (navigator.serviceWorker) {
         navigator.serviceWorker.register (
-          '/github-page-pwa/sw.js',
-          {scope: '/github-page-pwa/'}
+          '/ccfwebapp/sw.js',
+          {scope: '/ccfwebapp/'}
         )
       }
   </script>
