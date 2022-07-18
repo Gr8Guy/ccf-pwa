@@ -1,6 +1,6 @@
 var GHPATH = '/ccf-pwa';
 var APP_PREFIX = 'ccf_';
-var VERSION = 'version_011';
+var VERSION = 'version_012';
 var URLS = [    
   `${GHPATH}/`,
   `${GHPATH}/index.html`,
@@ -9,6 +9,7 @@ var URLS = [
   `${GHPATH}/js/app.js`
   `${GHPATH}/js/jquery-3.1.0.min.js`
   `${GHPATH}/audio/120BPM.mp3`
+  `${GHPATH}/img/qr.png`
 ]
 
 var CACHE_NAME = APP_PREFIX + VERSION
