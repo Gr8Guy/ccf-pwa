@@ -98,6 +98,242 @@
         bottom: 1px;
         right: 1px;
       }
+      
+      .neonShadow{
+  
+  animation: glow 10s ; //timing?  infinite?
+  transition:10.5s;
+}
+
+
+@keyframes glow{
+  0%{
+  box-shadow: 5px 5px 20px rgb(0, 255, 0),-5px -5px 20px rgb(0, 255, 0);}
+  
+  50%{
+  box-shadow: 5px 5px 20px rgb(255, 255, 0),-5px -5px 20px rgb(255, 255, 0)
+  }
+  100%{
+  box-shadow: 5px 5px 20px rgb(255, 0, 0),-5px -5px 20px rgb(255, 0, 0)
+  }
+}
+
+      
+      .inner {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.bpm {
+
+  font-weight: inherit;
+}
+
+.bpm-span {
+  padding: .2em;
+  text-align: center;
+
+}
+
+input[type="range"] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  background: transparent; /* Otherwise white in Chrome */
+  width: 55%;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-ms-track {
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.5em;
+  width: 0.5em;
+  border-radius: 40px;
+  background: black;
+  cursor: pointer;
+  margin-top: -0.6em;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 1.5em;
+  width: 0.75em;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  margin-top: -0.6em;
+}
+
+input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 1.5em;
+  width: .75em;
+  border-radius: 10px;
+  background: black;
+  cursor: pointer;
+  margin-top: -0.6em;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 3px;
+    width:30%;
+  cursor: pointer;
+  background: #667;
+  border-radius: 10px;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 20px;
+  cursor: pointer;
+  background: white;
+  border-radius: 10px;
+}
+
+input[type="range"]::-ms-track {
+  height: 20px;
+  cursor: pointer;
+  background: white;
+  border-radius: 10px;
+}
+// style for hourglass
+    
+      * {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--bg: #e3e4e8;
+	--fg: #2e3138;
+	--primary: #255ff4;
+	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+
+
+.hourglass, .hourglass:before, .hourglass:after {
+	animation-duration: 10s;
+	animation-iteration-count: 1;
+}
+.hourglass {
+	--polygonH: polygon(0% 0%,100% 0%,100% 5.55%,95% 5.55%,95% 28%,60% 46%,60% 54%,95% 72%,95% 94.45%,100% 94.45%,100% 100%,0% 100%,0% 94.45%,5% 94.45%,5% 72%,40% 54%,40% 46%,5% 28%,5% 5.55%,0% 5.55%);
+	animation-name: flip;
+	animation-timing-function: ease-in-out;
+	background-image: linear-gradient(var(--primary) 0.5em,#737a8c55 0.5em 8.5em,var(--primary) 8.5em);
+	clip-path: var(--polygonH);
+	-webkit-clip-path: var(--polygonH);
+	overflow: hidden;
+	position: fixed;
+    right: 1%;
+    top: 40%;
+	width: 5em;
+	height: 9em;
+	z-index: 0;
+}
+.hourglass:before, .hourglass:after {
+	animation-timing-function: linear;
+	content: "";
+	display: block;
+	position: absolute;
+}
+.hourglass:before { 
+	--polygonB1: polygon(0% 0%,100% 0%,100% 24%,50% 47%,50% 47%,50% 47%,50% 47%,50% 47%,50% 47%,50% 47%,50% 47%,0% 24%);
+	--polygonB2: polygon(0% 4%,100% 4%,100% 24%,55% 45%,55% 100%,55% 100%,55% 100%,45% 100%,45% 100%,45% 100%,45% 45%,0% 24%);
+	--polygonB3: polygon(0% 24%,100% 24%,100% 24%,55% 45%,55% 80%,100% 100%,100% 100%,0% 100%,0% 100%,45% 80%,45% 45%,0% 24%);
+	--polygonB4: polygon(45% 45%,55% 45%,55% 45%,55% 45%,55% 58%,100% 76%,100% 100%,0% 100%,0% 76%,45% 58%,45% 45%,45% 45%);
+	--polygonB5: polygon(50% 53%,50% 53%,50% 53%,50% 53%,50% 53%,100% 76%,100% 100%,0% 100%,0% 76%,50% 53%,50% 53%,50% 53%);
+	animation-name: fill;
+	background-color: var(--fg);
+	background-size: 100% 3.6em;
+	clip-path: var(--polygonB1);
+	-webkit-clip-path: var(--polygonB1);
+	top: 0.5em;
+	left: 0.5em;
+	width: 4em;
+	height: 8em;
+	z-index: 1;
+}
+.hourglass:after {
+	animation-name: glare;
+	background:
+		linear-gradient(90deg,#0000 0.5em,#0003 0.5em 1.5em,#0000 1.5em 3.5em,#fff3 3.5em 4.5em,#fff0 4.5em 6.5em,#0003 6.5em 7.5em,#0000 7.5em) 0 0 / 100% 0.5em,
+		linear-gradient(90deg,#0000 0.75em,#0003 0.75em 1.25em,#0000 1.25em 3.75em,#fff3 3.75em 4.25em,#fff0 4.25em 6.75em,#0003 6.75em 7.25em,#0000 7.25em) 0 0.5em / 100% 8em,
+		linear-gradient(90deg,#0000 0.5em,#0003 0.5em 1.5em,#0000 1.5em 3.5em,#fff3 3.5em 4.5em,#fff0 4.5em 6.5em,#0003 6.5em 7.5em,#0000 7.5em) 0 100% / 100% 0.5em;
+	background-repeat: repeat-x;
+	top: 0;
+	left: -3em;
+	width: 200%;
+	height: 100%;
+	z-index: 2;
+}
+/* Animations */
+@keyframes fill {
+	from {
+		clip-path: var(--polygonB1);
+		-webkit-clip-path: var(--polygonB1);
+	}
+	10% {
+		clip-path: var(--polygonB2);
+		-webkit-clip-path: var(--polygonB2);
+	}
+	45% {
+		clip-path: var(--polygonB3);
+		-webkit-clip-path: var(--polygonB3);
+	}
+	80% {
+		clip-path: var(--polygonB4);
+		-webkit-clip-path: var(--polygonB4);
+	}
+	85%, to {
+		clip-path: var(--polygonB5);
+		-webkit-clip-path: var(--polygonB5);
+	}
+}
+@keyframes glare {
+	from, 90% {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(3em);
+	}
+}
+@keyframes flip {
+	from, 90% {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(180deg);
+		
+	}
+}
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #17181c;
+		--fg: #c7cad1;
+	}
+}
+      
+      
+      
     </style>
 
   </head>
@@ -105,13 +341,11 @@
 <!-- Trigger/Open The Modal -->
     <div class="center">
       <br/><br/>
-      <b1 style=" font-size: 20px;">Metronome 120 BPM</b1><br />
+<!-- <div class="hourglass"></div> -->
 
-      <audio controls loop id="metronomeSound">
-        <source  src="audio/120BPM.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    
+
+
+
 
       <div class="container-fluid">
         <div class="jumbotron">
@@ -120,7 +354,30 @@
 
         <div id="timer-container" class="container timer-container">
           <div class="row mb-6 mt-4">
+            <div class="col-md-4 col-sm-12 mb-12 card-group">
+              <div id="timer4" class="mb-12 card  border border-secondary">
+                <div class="card-header bg-secondary text-white">
+                  <b1 style=" font-size: 20px;">Metronome <font id="bpm" class="bpm">100</font> BPM</b1>
 
+                </div>
+                <div class="card-block ">
+    <div class="inner">
+      <span class="bpm-span">
+
+
+      <button id="dec">-</button>
+      <input type="range" min="100" max="120" step="1" value="100" id="slider" />
+      <button id="inc">+</button>
+<p>
+      <button id="play">PLAY</button>
+      <button id="stop">STOP</button>
+    </p>
+            </span>
+    </div>
+                    
+                </div>
+              </div>
+            </div>
             <div class="col-md-4 col-sm-12 mb-12 card-group">
               <div id="timer2" class="mb-12 card  border border-secondary">
                 <div class="card-header bg-secondary text-white">
@@ -130,12 +387,13 @@
                 <div class="card-block ">
                   <p></p>
                   <button type="button" id="startbutton1" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
-                    onclick="startToggle()" data-timerid="1" style="text-align: center; font-size: 20px;">Start</button>
-                  <button type="button" class="btn btn-default col-md-4 mb-12 resetbutton" onclick="history.go(0)"
-                    data-timerid="1" style="text-align: center; font-size: 20px;">Reset</button>
+                    onclick="startToggle();show_now();" data-timerid="1" style="text-align: center; font-size: 20px;">Start</button><p id="date_time_button"></p>
+
                   <p></p>
                   <p class="display-4 text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px;"
                     data-timerid="1">00:00.00</p>
+                    
+<div id=display style="font-size:11px;"></div>
                 </div>
               </div>
             </div>
@@ -149,8 +407,7 @@
                   <p></p>
                   <button type="button" id="startbutton2" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
                     onclick="startToggle()" data-timerid="2" style="text-align: center; font-size: 20px;">Start</button>
-                  <button type="button" class="btn btn-default col-md-4 mb-12 resetbutton" onclick="resetTimerX()"
-                    data-timerid="2" style="text-align: center; font-size: 20px;">Reset</button>
+
                   <p></p>
                   <p class="display-4 text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px;"
                     data-timerid="2">00:00.00</p>
@@ -178,7 +435,10 @@
     </div>
 
     <h6>
-      <button id="myBtn">About</button>
+        <button type="button" class="btn btn-default col-md-4 mb-12 resetbutton" onclick="history.go(0)"
+                    data-timerid="1" style="text-align: center; font-size: 20px;">Reset</button>
+        &nbsp;
+        <button id="myBtn" class="btn btn-default col-md-4 mb-12">About</button>
 
       <!-- The Modal -->
       <div id="myModal" class="modal">
@@ -197,7 +457,14 @@
       </div>
     </h6>
 
-    <script>   
+    <script>
+function show_now() { 
+var my_time = new Date(); 
+document.getElementById('display');
+    let html= new Date;
+    display.insertAdjacentHTML("beforeend", html)
+}
+
       //Timer constructor function
       function Timer(id, currentstarttime, mslogged) {
         this.id = id,
@@ -269,6 +536,7 @@
         $('.startbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .text("Stop")
           .addClass("btn-danger")
+          .removeClass("neonShadow")
           .removeClass("btn-success")
         $('.resetbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .addClass("btn-warning")
@@ -289,10 +557,12 @@
         $('.startbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .text("Start")
           .addClass("btn-success")
-          .removeClass("btn-danger");
+          .removeClass("btn-danger")
+          .addClass("neonShadow");
         $('.timertabledisplay[data-timerid="' + String(timeridzero + 1) + '"]')
           .addClass("table-info")
-          .removeClass("table-success");
+          .removeClass("table-success")
+
         displayTime(timeridzero, timerarr[timeridzero].msLogged);
       }
 
@@ -452,6 +722,64 @@
         )
       }
   </script>
+    <script>
+    $(document).ready(() => {
+  const slider = $("#slider");
+  const beep = new Audio(
+    "data:audio/flac;base64,ZkxhQwAAACIQABAAAARBAARBAfQBcAAAAZLfwZb9QVlTtnnZLOsaWczxhAAAKCAAAAByZWZlcmVuY2UgbGliRkxBQyAxLjMuMCAyMDEzMDUyNgAAAAD/+HQMAAGRJhgKxHRX63x+6QxXqTpCYAANDJgITNAmIhAB/5BgFt4iAfgBZHY4A9UZAAZ65QManTnQUAKnx8A+ZcwFun6gX1gMVIgAfaXgEml9KIzgfUBYAnhLwJl/Oek+A5rZADhx2ApN3s198CTrfAPyHMGRV3DcKAYAAwBJ7uA8wysUF8HYV6AUyIIKv/ObD0B7BRAOf6QFVnlVIrg0zuwGYTqCTP9rJXAWm4AC1HQDxVMnllwVg94CGPDDq6XrJRgQ2zwHp6wGR5tQFGh9dygZtwIXeHNK+AHAw8BZ34BSgBUY44Ze3IEt2uEhBfQg3BcaTA+MSB/rIUTNIUTWYN9hMdT2M/TYEg+cDC6KGzFJQAzj8TBBUujjHFLnsqB07TAj7JBa4qTwQY15pQ9rKxSdhzrJwxaKA3o/BKIsTkDYtGCwxtDRCIqzegQo2pAr9KD0mKmwtRJeuhMscnKzjNLLCC4CCDoYNaPiZmNPNIsdzTJkF0zHIRyDGDZzCLozKYLfNVZUYt6pWUiy7/Bjf5CyRUJ95iW1TLkIET7MJJU5yxARVwzCNBsIZHCVflJ5ZE+0K30dXKabEjNYdP+TulglDBSFPJNlCtxqLycmj5OeMkURsMFSXgrtnXLllFm5cySbjiZQKoshh0ASOArXdBJuJ9c2syJBjM8II1VJYFtSEVbCw3f80qnABkAClxxw8mPk8NdHt4q9gNy0UpWEuO2UUx3jZSuRqVkcoWnWIWa1ahV3Y3K5KbKMH879vqjUtUZMatwgfZeOMvsQlyisbQ71rIxGX9FhUSYvRHvF3xeunSYfQ4iRItSvuvzR5iO3xDFaEdARSGOC1fGIpY/hll/Z8dBI+J6u22KvVuDK2IiXW9V8Htkhxa94kLDPz25hsMC8qImvymxd70W8D5iDfsU9TYMYt5EIfJnAWr0bS7NbeHbQu6ZsuZyvTuhwMbc9XFv3q4b4amazBWwDvKfuyGSBrwrbr8+kkvhfZKs7C2FwoVooWXOnr/sWmZ5hWFSSpEtq0O6bjQhPR6Eguo8PmOz4SoKeIgpRmJZ1CEWpm1U6F/2UKJhBBJi0KeJ6kgEoPCeWSBmv85AOeDhOk/mJgciON6g0DZHbeVa7jIhYMBSP4ukvNIr36CvTjhkZCkWJk5godIxpiOjqiEnoJQ2K3HjKtYcY2CFWiXpIrqaGEIgef4gs+JXnhRm4GziHB2h/OIRB6BgfhgH4ap2DiTgVwIUN6FjaguFoE0uENThJRYJMOBCwg3zIOyKB00gOl4LXWC79gW14DOaCQAglUoEKCApZgc1YHC2AxzgJBoFcSBWWgICoBp+BEXgO64BeGAXYgMGoCoCAOYgEk4CGWAb5gB54A2SAWGgEfoAHyAINgDuYAkeAAbgBfoAgyAEEgAC4ARGADPgAf4AFyABYgAeIACGAAMgAaYAECABJgAagfd0="
+  );
+  let playing = false;
+  let intervalMS;
+  let id;
+
+  // console.log(sldr.prop("step"));
+
+  $("#play").on("click", (event) => {
+    event.preventDefault();
+    window.clearInterval(id);
+    id = interval(intervalMS);
+    playing = true;
+  });
+
+  $("#stop").on("click", (event) => {
+    event.preventDefault();
+    window.clearInterval(id);
+    playing = false;
+  });
+
+  $("#slider").on("input", (event) => {
+    event.preventDefault();
+    let value = +event.target.value;
+    intervalMS = 1000 / (value / 60); //get BPM
+    $("#bpm").html(`${value}`);
+    window.clearInterval(id);
+    if (playing) id = interval(intervalMS);
+  });
+
+  $("#inc").on("click", (event) => {
+    event.preventDefault();
+    const newVal = parseInt(slider.val()) + parseInt(slider.prop("step"));
+    slider.val(newVal);
+    slider.trigger("input");
+  });
+
+  $("#dec").on("click", (event) => {
+    event.preventDefault();
+    const newVal = parseInt(slider.val()) - parseInt(slider.prop("step"));
+    slider.val(newVal);
+    slider.trigger("input");
+  });
+
+  function playBeep() {
+    beep.play();
+  }
+
+  function interval(int = 666.66) {
+    return setInterval(playBeep, int);
+  }
+});
+
+    </script>
   <script src="js/app.js"></script>
 </body>
 </html>
