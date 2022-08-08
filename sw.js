@@ -1,6 +1,6 @@
 var GHPATH = '/ccf-pwa';
 var APP_PREFIX = 'ccf_';
-var VERSION = 'version_018';
+var VERSION = 'version_019';
 var URLS = [    
   `${GHPATH}/`,
   `${GHPATH}/index.html`,
