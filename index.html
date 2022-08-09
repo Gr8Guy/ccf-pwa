@@ -400,10 +400,10 @@ document.getElementById('display');
           .text("Stop")
           .addClass("btn-outline-danger")
           .removeClass("neonShadow")
-          .removeClass("btn-outline-success")
+          .removeClass("btn-outine-success")
         $('.resetbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .addClass("btn-warning")
-          .removeClass("btn-outline-dark")
+          .removeClass("btn-outine-default")
         $('.timertabledisplay[data-timerid="' + String(timeridzero + 1) + '"]')
           .addClass("table-success")
           .removeClass("table-info")
@@ -419,7 +419,7 @@ document.getElementById('display');
 
         $('.startbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .text("Start")
-          .addClass("btn-outline-success")
+          .addClass("btn-outine-success")
           .removeClass("btn-outline-danger")
           .addClass("neonShadow");
         $('.timertabledisplay[data-timerid="' + String(timeridzero + 1) + '"]')
@@ -461,7 +461,7 @@ document.getElementById('display');
         */
         if (timerarr[0].running != false && timerarr[1].running != false) {
           percentage = (timerarr[1].displayms / timerarr[0].displayms) * 100;
-          percentageText = percentage.toFixed(0) + '% C.C.F.';
+          percentageText = percentage.toFixed(0) + '%';
           $('#percentage').html(percentageText);
 
 
@@ -525,8 +525,6 @@ document.getElementById('display');
       }
 
       function toggleSound() {
-
-        
         const audio = document.querySelector(`audio[id="metronomeSound"]`);
         if (!audio) return;
         (!audio.paused) ? audio.pause() : audio.play();
