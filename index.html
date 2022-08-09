@@ -238,7 +238,7 @@ input[type="range"]::-ms-track {
                 </div>
                 <div class="card-block ">
 <br>
-                  <button type="button" id="startbutton1" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
+                  <button type="button" id="startbutton1" class="btn btn-outline-success  btn-block col-md-4  mb-12 startbutton"
                     onclick="startToggle();show_now();" data-timerid="1" style="text-align: center; font-size: 20px;">Start</button><div id="date_time_button"></div> <br>
 
 
@@ -256,7 +256,7 @@ input[type="range"]::-ms-track {
                 </div>
                 <div class="card-block ">
                     <br>
-                  <button type="button" id="startbutton2" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
+                  <button type="button" id="startbutton2" class="btn btn-outline-success  btn-block col-md-4  mb-12 startbutton"
                     onclick="startToggle()" data-timerid="2" style="text-align: center; font-size: 20px;">Start</button>
 
                   <p></p>
@@ -398,7 +398,7 @@ document.getElementById('display');
           .text("Stop")
           .addClass("btn-outline-danger")
           .removeClass("neonShadow")
-          .removeClass("btn-success")
+          .removeClass("btn-outline-success")
         $('.resetbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .addClass("btn-warning")
           .removeClass("btn-outline-dark")
@@ -417,7 +417,7 @@ document.getElementById('display');
 
         $('.startbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .text("Start")
-          .addClass("btn-success")
+          .addClass("btn-outline-success")
           .removeClass("btn-outline-danger")
           .addClass("neonShadow");
         $('.timertabledisplay[data-timerid="' + String(timeridzero + 1) + '"]')
