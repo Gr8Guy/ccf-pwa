@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +43,9 @@
         border-radius: 90px;
         transform: scale(1.05);
       }
-
+.card  {
+  margin-top: 2%;
+    }
 
       /* The Modal (background) */
       .modal {
@@ -54,7 +55,7 @@
         /* Stay in place */
         z-index: 1;
         /* Sit on top */
-        padding-top: 100px;
+        padding-top: 2%;
         /* Location of the box */
         left: 0;
         top: 0;
@@ -62,11 +63,11 @@
         /* Full width */
         height: 100%;
         /* Full height */
-        overflow: auto;
+        overflow: hidden;
         /* Enable scroll if needed */
         background-color: rgb(0, 0, 0);
         /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.5);
         /* Black w/ opacity */
       }
 
@@ -76,7 +77,7 @@
         margin: auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
+
       }
 
       /* The Close Button */
@@ -145,7 +146,7 @@
 input[type="range"] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   background: transparent; /* Otherwise white in Chrome */
-  width:  15%;
+  width: 55%;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -186,7 +187,7 @@ input[type="range"]::-moz-range-thumb {
 input[type="range"]::-ms-thumb {
   -webkit-appearance: none;
   height: 1.5em;
-    width:30%;
+  width: .75em;
   border-radius: 10px;
   background: black;
   cursor: pointer;
@@ -214,140 +215,14 @@ input[type="range"]::-ms-track {
   background: white;
   border-radius: 10px;
 }
-// style for hourglass
-    
-      * {
-	border: 0;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-:root {
-	--bg: #e3e4e8;
-	--fg: #2e3138;
-	--primary: #255ff4;
-	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
-}
 
-
-.hourglass, .hourglass:before, .hourglass:after {
-	animation-duration: 10s;
-	animation-iteration-count: 1;
-}
-.hourglass {
-	--polygonH: polygon(0% 0%,100% 0%,100% 5.55%,95% 5.55%,95% 28%,60% 46%,60% 54%,95% 72%,95% 94.45%,100% 94.45%,100% 100%,0% 100%,0% 94.45%,5% 94.45%,5% 72%,40% 54%,40% 46%,5% 28%,5% 5.55%,0% 5.55%);
-	animation-name: flip;
-	animation-timing-function: ease-in-out;
-	background-image: linear-gradient(var(--primary) 0.5em,#737a8c55 0.5em 8.5em,var(--primary) 8.5em);
-	clip-path: var(--polygonH);
-	-webkit-clip-path: var(--polygonH);
-	overflow: hidden;
-	position: fixed;
-    right: 1%;
-    top: 40%;
-	width: 5em;
-	height: 9em;
-	z-index: 0;
-}
-.hourglass:before, .hourglass:after {
-	animation-timing-function: linear;
-	content: "";
-	display: block;
-	position: absolute;
-}
-.hourglass:before { 
-	--polygonB1: polygon(0% 0%,100% 0%,100% 24%,50% 47%,50% 47%,50% 47%,50% 47%,50% 47%,50% 47%,50% 47%,50% 47%,0% 24%);
-	--polygonB2: polygon(0% 4%,100% 4%,100% 24%,55% 45%,55% 100%,55% 100%,55% 100%,45% 100%,45% 100%,45% 100%,45% 45%,0% 24%);
-	--polygonB3: polygon(0% 24%,100% 24%,100% 24%,55% 45%,55% 80%,100% 100%,100% 100%,0% 100%,0% 100%,45% 80%,45% 45%,0% 24%);
-	--polygonB4: polygon(45% 45%,55% 45%,55% 45%,55% 45%,55% 58%,100% 76%,100% 100%,0% 100%,0% 76%,45% 58%,45% 45%,45% 45%);
-	--polygonB5: polygon(50% 53%,50% 53%,50% 53%,50% 53%,50% 53%,100% 76%,100% 100%,0% 100%,0% 76%,50% 53%,50% 53%,50% 53%);
-	animation-name: fill;
-	background-color: var(--fg);
-	background-size: 100% 3.6em;
-	clip-path: var(--polygonB1);
-	-webkit-clip-path: var(--polygonB1);
-	top: 0.5em;
-	left: 0.5em;
-	width: 4em;
-	height: 8em;
-	z-index: 1;
-}
-.hourglass:after {
-	animation-name: glare;
-	background:
-		linear-gradient(90deg,#0000 0.5em,#0003 0.5em 1.5em,#0000 1.5em 3.5em,#fff3 3.5em 4.5em,#fff0 4.5em 6.5em,#0003 6.5em 7.5em,#0000 7.5em) 0 0 / 100% 0.5em,
-		linear-gradient(90deg,#0000 0.75em,#0003 0.75em 1.25em,#0000 1.25em 3.75em,#fff3 3.75em 4.25em,#fff0 4.25em 6.75em,#0003 6.75em 7.25em,#0000 7.25em) 0 0.5em / 100% 8em,
-		linear-gradient(90deg,#0000 0.5em,#0003 0.5em 1.5em,#0000 1.5em 3.5em,#fff3 3.5em 4.5em,#fff0 4.5em 6.5em,#0003 6.5em 7.5em,#0000 7.5em) 0 100% / 100% 0.5em;
-	background-repeat: repeat-x;
-	top: 0;
-	left: -3em;
-	width: 200%;
-	height: 100%;
-	z-index: 2;
-}
-/* Animations */
-@keyframes fill {
-	from {
-		clip-path: var(--polygonB1);
-		-webkit-clip-path: var(--polygonB1);
-	}
-	10% {
-		clip-path: var(--polygonB2);
-		-webkit-clip-path: var(--polygonB2);
-	}
-	45% {
-		clip-path: var(--polygonB3);
-		-webkit-clip-path: var(--polygonB3);
-	}
-	80% {
-		clip-path: var(--polygonB4);
-		-webkit-clip-path: var(--polygonB4);
-	}
-	85%, to {
-		clip-path: var(--polygonB5);
-		-webkit-clip-path: var(--polygonB5);
-	}
-}
-@keyframes glare {
-	from, 90% {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(3em);
-	}
-}
-@keyframes flip {
-	from, 90% {
-		transform: rotate(0);
-	}
-	to {
-		transform: rotate(180deg);
-		
-	}
-}
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-	:root {
-		--bg: #17181c;
-		--fg: #c7cad1;
-	}
-}
-      
-      
-      
     </style>
 
   </head>
 <body>
+  <div style="margin-top: 15%;"></div>
 <!-- Trigger/Open The Modal -->
     <div class="center">
-      <br/><br/>
-<!-- <div class="hourglass"></div> -->
-
-
-
-
-
       <div class="container-fluid">
         <div class="jumbotron">
           <h1 class="text-center hidden-xs-down"><b></b></h1>
@@ -355,21 +230,20 @@ input[type="range"]::-ms-track {
 
         <div id="timer-container" class="container timer-container">
           <div class="row mb-6 mt-4">
-
+            
             <div class="col-md-4 col-sm-12 mb-12 card-group">
               <div id="timer2" class="mb-12 card  border border-secondary">
                 <div class="card-header bg-secondary text-white">
-                  <b1 style=" font-size: 20px;">Code Time</b1>
+                  <b1 style=" font-size: 20px;">Code Time</b1> <div class=" text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px; text-align: center;"
+                    data-timerid="1"> 00:00.00</div>                                   
 
                 </div>
                 <div class="card-block ">
-                  <p></p>
-                  <button type="button" id="startbutton1" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
-                    onclick="startToggle();show_now();" data-timerid="1" style="text-align: center; font-size: 20px;">Start</button><p id="date_time_button"></p>
+<br>
+                  <button type="button" id="startbutton1" class="btn btn-outline-success  btn-block col-md-4  mb-12 startbutton"
+                    onclick="startToggle();show_now();" data-timerid="1" style="text-align: center; font-size: 20px;">Start</button><div id="date_time_button"></div> <br>
 
-                  <p></p>
-                  <p class="display-4 text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px;"
-                    data-timerid="1">00:00.00</p>
+
                     
 <div id=display style="font-size:11px;"></div>
                 </div>
@@ -377,24 +251,23 @@ input[type="range"]::-ms-track {
             </div>
 
             <div class="col-md-4 col-sm-12 mb-12 card-group">
-              <div id="timer3" class="mb-12 card  border border-secondary">
-                <div id="box"class="card-header bg-secondary text-white">
-                  <b1 style=" font-size: 20px;">Compression Time &amp; CCF</b1>
+              <div id="timer2" class="mb-12 card  border border-secondary">
+                <div id="box" class="card-header bg-secondary text-white">
+                  <b1 style=" font-size: 20px;">Compression Time</b1>                  <div class="display-4 text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px;"
+                    data-timerid="2">00:00.00</div>
                 </div>
                 <div class="card-block ">
-                  <p></p>
-                  <button type="button" id="startbutton2" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
+                    <br>
+                  <button type="button" id="startbutton2" class="btn btn-outline-success  btn-block col-md-4  mb-12 startbutton"
                     onclick="startToggle()" data-timerid="2" style="text-align: center; font-size: 20px;">Start</button>
 
                   <p></p>
-                  <p class="display-4 text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px;"
-                    data-timerid="2">00:00.00</p>
-                                      <p id="percentage" class="col-md-12" style="text-align: center; font-size: 40px;">0%</p>
-                </div>
+                  <div id="percentage" class="col-md-12" style="text-align: center; font-size: 40px;">0%</div>
                 </div>
               </div>
-              
-                          <div class="col-md-4 col-sm-12 mb-12 card-group">
+            </div>
+
+<div class="col-md-4 col-sm-12 mb-12 card-group">
               <div id="timer4" class="mb-12 card  border border-secondary">
                 <div class="card-header bg-secondary text-white">
                   <b1 style=" font-size: 20px;">Metronome <font id="bpm" class="bpm">100</font> BPM</b1>
@@ -408,20 +281,16 @@ input[type="range"]::-ms-track {
       <button id="dec">-</button>
       <input type="range" min="100" max="120" step="1" value="100" id="slider" />
       <button id="inc">+</button>
-<p>
+<!-- <div>
       <button id="play">PLAY</button>
       <button id="stop">STOP</button>
-    </p>
+    </div> -->
             </span>
     </div>
                     
                 </div>
               </div>
             </div>
-            </div>
-
-
-
           </div>
         </div>
 
@@ -429,10 +298,10 @@ input[type="range"]::-ms-track {
     </div>
 
     <h6>
-        <button type="button" class="btn btn-default col-md-4 mb-12 resetbutton" onclick="history.go(0)"
+        <button type="button" class="btn btn-outline-dark col-md-4 mb-12 resetbutton" onclick="history.go(0)"
                     data-timerid="1" style="text-align: center; font-size: 20px;">Reset</button>
         &nbsp;
-        <button id="myBtn" class="btn btn-default col-md-4 mb-12">About</button>
+        <button id="myBtn" class="btn btn-outline-dark col-md-4 mb-12" style="text-align: center; font-size: 20px;">About</button>
 
       <!-- The Modal -->
       <div id="myModal" class="modal">
@@ -529,12 +398,12 @@ document.getElementById('display');
 
         $('.startbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .text("Stop")
-          .addClass("btn-danger")
+          .addClass("btn-outline-danger")
           .removeClass("neonShadow")
-          .removeClass("btn-success")
+          .removeClass("btn-outline-success")
         $('.resetbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .addClass("btn-warning")
-          .removeClass("btn-default")
+          .removeClass("btn-outline-dark")
         $('.timertabledisplay[data-timerid="' + String(timeridzero + 1) + '"]')
           .addClass("table-success")
           .removeClass("table-info")
@@ -550,8 +419,8 @@ document.getElementById('display');
 
         $('.startbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .text("Start")
-          .addClass("btn-success")
-          .removeClass("btn-danger")
+          .addClass("btn-outline-success")
+          .removeClass("btn-outline-danger")
           .addClass("neonShadow");
         $('.timertabledisplay[data-timerid="' + String(timeridzero + 1) + '"]')
           .addClass("table-info")
@@ -592,7 +461,7 @@ document.getElementById('display');
         */
         if (timerarr[0].running != false && timerarr[1].running != false) {
           percentage = (timerarr[1].displayms / timerarr[0].displayms) * 100;
-          percentageText = percentage.toFixed(0) + '%';
+          percentageText = percentage.toFixed(0) + '% C.C.F.';
           $('#percentage').html(percentageText);
 
 
