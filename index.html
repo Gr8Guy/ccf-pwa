@@ -296,10 +296,10 @@ input[type="range"]::-ms-track {
     </div>
 
     <h6>
-        <button type="button" class="btn btn-default col-md-4 mb-12 resetbutton" onclick="history.go(0)"
+        <button type="button" class="btn btn-outline-dark col-md-4 mb-12 resetbutton" onclick="history.go(0)"
                     data-timerid="1" style="text-align: center; font-size: 20px;">Reset</button>
         &nbsp;
-        <button id="myBtn" class="btn btn-default col-md-4 mb-12" style="text-align: center; font-size: 20px;">About</button>
+        <button id="myBtn" class="btn btn-outline-dark col-md-4 mb-12" style="text-align: center; font-size: 20px;">About</button>
 
       <!-- The Modal -->
       <div id="myModal" class="modal">
@@ -396,12 +396,12 @@ document.getElementById('display');
 
         $('.startbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .text("Stop")
-          .addClass("btn-danger")
+          .addClass("btn-outline-danger")
           .removeClass("neonShadow")
           .removeClass("btn-success")
         $('.resetbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .addClass("btn-warning")
-          .removeClass("btn-default")
+          .removeClass("btn-outline-dark")
         $('.timertabledisplay[data-timerid="' + String(timeridzero + 1) + '"]')
           .addClass("table-success")
           .removeClass("table-info")
@@ -418,7 +418,7 @@ document.getElementById('display');
         $('.startbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .text("Start")
           .addClass("btn-success")
-          .removeClass("btn-danger")
+          .removeClass("btn-outline-danger")
           .addClass("neonShadow");
         $('.timertabledisplay[data-timerid="' + String(timeridzero + 1) + '"]')
           .addClass("table-info")
