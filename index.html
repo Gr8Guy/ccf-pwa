@@ -415,7 +415,7 @@ document.getElementById('display');
         //Updates display, sets running to false and changes stop button.
         timerarr[timeridzero].msLogged += Date.now() - timerarr[timeridzero].latestStartTime;
         timerarr[timeridzero].displayms = timerarr[timeridzero].msLogged;
-        timerarr[timeridzero].running = false;
+        timerarr[timeridzero].running = true;
 
         $('.startbutton[data-timerid="' + String(timeridzero + 1) + '"]')
           .text("Start")
