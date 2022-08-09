@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
   <style>
       .center {
         text-align: center;
-        margin-top: 0.5em;
+        margin-top: 1em;
       }
       .add-button {
         position: absolute;
@@ -144,7 +145,7 @@
 input[type="range"] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   background: transparent; /* Otherwise white in Chrome */
-  width: 55%;
+  width:  15%;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -167,7 +168,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 1.5em;
   width: 0.5em;
   border-radius: 40px;
-  background: black;
+  background: red;
   cursor: pointer;
   margin-top: -0.6em;
 }
@@ -185,7 +186,7 @@ input[type="range"]::-moz-range-thumb {
 input[type="range"]::-ms-thumb {
   -webkit-appearance: none;
   height: 1.5em;
-  width: .75em;
+    width:30%;
   border-radius: 10px;
   background: black;
   cursor: pointer;
@@ -340,6 +341,7 @@ input[type="range"]::-ms-track {
 <body>
 <!-- Trigger/Open The Modal -->
     <div class="center">
+      <br/><br/>
 <!-- <div class="hourglass"></div> -->
 
 
@@ -353,7 +355,46 @@ input[type="range"]::-ms-track {
 
         <div id="timer-container" class="container timer-container">
           <div class="row mb-6 mt-4">
+
             <div class="col-md-4 col-sm-12 mb-12 card-group">
+              <div id="timer2" class="mb-12 card  border border-secondary">
+                <div class="card-header bg-secondary text-white">
+                  <b1 style=" font-size: 20px;">Code Time</b1>
+
+                </div>
+                <div class="card-block ">
+                  <p></p>
+                  <button type="button" id="startbutton1" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
+                    onclick="startToggle();show_now();" data-timerid="1" style="text-align: center; font-size: 20px;">Start</button><p id="date_time_button"></p>
+
+                  <p></p>
+                  <p class="display-4 text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px;"
+                    data-timerid="1">00:00.00</p>
+                    
+<div id=display style="font-size:11px;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12 mb-12 card-group">
+              <div id="timer3" class="mb-12 card  border border-secondary">
+                <div id="box"class="card-header bg-secondary text-white">
+                  <b1 style=" font-size: 20px;">Compression Time &amp; CCF</b1>
+                </div>
+                <div class="card-block ">
+                  <p></p>
+                  <button type="button" id="startbutton2" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
+                    onclick="startToggle()" data-timerid="2" style="text-align: center; font-size: 20px;">Start</button>
+
+                  <p></p>
+                  <p class="display-4 text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px;"
+                    data-timerid="2">00:00.00</p>
+                                      <p id="percentage" class="col-md-12" style="text-align: center; font-size: 40px;">0%</p>
+                </div>
+                </div>
+              </div>
+              
+                          <div class="col-md-4 col-sm-12 mb-12 card-group">
               <div id="timer4" class="mb-12 card  border border-secondary">
                 <div class="card-header bg-secondary text-white">
                   <b1 style=" font-size: 20px;">Metronome <font id="bpm" class="bpm">100</font> BPM</b1>
@@ -377,55 +418,9 @@ input[type="range"]::-ms-track {
                 </div>
               </div>
             </div>
-            <div class="col-md-4 col-sm-12 mb-12 card-group">
-              <div id="timer2" class="mb-12 card  border border-secondary">
-                <div class="card-header bg-secondary text-white">
-                  <b1 style=" font-size: 20px;">Code Time</b1>
-
-                </div>
-                <div class="card-block ">
-                  <p></p>
-                  <button type="button" id="startbutton1" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
-                    onclick="startToggle();show_now();" data-timerid="1" style="text-align: center; font-size: 20px;">Start</button><p id="date_time_button"></p>
-
-                  <p></p>
-                  <p class="display-4 text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px;"
-                    data-timerid="1">00:00.00</p>
-                    
-<div id=display style="font-size:11px;"></div>
-                </div>
-              </div>
             </div>
 
-            <div class="col-md-4 col-sm-12 mb-12 card-group">
-              <div id="timer2" class="mb-12 card  border border-secondary">
-                <div class="card-header bg-secondary text-white">
-                  <b1 style=" font-size: 20px;">Compression Time</b1>
-                </div>
-                <div class="card-block ">
-                  <p></p>
-                  <button type="button" id="startbutton2" class="btn btn-success  btn-block col-md-4  mb-12 startbutton"
-                    onclick="startToggle()" data-timerid="2" style="text-align: center; font-size: 20px;">Start</button>
 
-                  <p></p>
-                  <p class="display-4 text-center mb-12 timerdisplay primarydisplay" style=" font-size: 20px;"
-                    data-timerid="2">00:00.00</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-12 mb-12 card-group">
-              <div id="timer3" class="mb-12 card  border ">
-                <div id="box" class="card-header text-white">
-                  <b1 style=" font-size: 20px;">DYNAMIC CCF<i style=" font-size: 10px;"><br />(when timers are active)</i>
-                  </b1>
-                </div>
-                <div class="card-block ">
-                  <p></p>
-                  <p id="percentage" class="col-md-12" style="text-align: center; font-size: 40px;">0%</p>
-                </div>
-              </div>
-            </div>
 
           </div>
         </div>
