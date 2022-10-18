@@ -276,7 +276,7 @@ input[type="range"]::-ms-track {
                 </div>
               </div>
             </div>
-<!--
+
 <div class="col-md-4 col-sm-12 mb-12 card-group">
               <div id="timer4" class="mb-12 card  border border-secondary">
                 <div class="card-header bg-secondary text-white">
@@ -302,7 +302,7 @@ input[type="range"]::-ms-track {
               </div>
             </div>
               
-              -->
+             
           </div>
         </div>
 
@@ -536,11 +536,11 @@ document.getElementById('display');
         };
       }
 
-     // function toggleSound() {
-       // const audio = document.querySelector(`audio[id="metronomeSound"]`);
-       // if (!audio) return;
-      //  (!audio.paused) ? audio.pause() : audio.play();
-    //  }
+      function toggleSound() {
+        const audio = document.querySelector(`audio[id="metronomeSound"]`);
+        if (!audio) return;
+        (!audio.paused) ? audio.pause() : audio.play();
+      }
 
       //Add an event listener to call nameChanged() when a user edits one of the timer names
       $(".timertitle").each(function () {
